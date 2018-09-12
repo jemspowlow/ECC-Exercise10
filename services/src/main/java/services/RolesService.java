@@ -28,8 +28,14 @@ public class RolesService {
 	 		 
 	 }
 	
-	public Roles save(Roles newRoles) { 
-		return rr.save(newRoles);
+	public RolesDTO save(RolesDTO roledto) { 
+		Roles newRoles = modelMapper.map(roledto,Roles.class);
+		
+		rr.save(newRoles);
+		
+		roledto = modelMapper.map(newRoles,RolesDTO.class);
+		
+		return roledto;
 	}
 	
 	public RolesDTO findOne(Long id) { 

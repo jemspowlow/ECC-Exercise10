@@ -6,6 +6,10 @@ import models.person.interfaces.*;
 import models.person.dto.PersonDTO;
 import models.address.Address;
 import models.address.dto.AddressDTO;
+import models.contact.Contact;
+import models.contact.dto.ContactDTO;
+import models.roles.dto.RolesDTO;
+import models.roles.Roles;
 import repositories.*;
 import services.*;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,50 +35,50 @@ class PersonController {
 	@GetMapping("/persons")
 	List<PersonDTO> all() {
 		return service.findAll();
-	}
+	 }
 	
 	@GetMapping("/persons/{id}/contacts")
 	Page<ContactInfo> getPersonContacts(@PathVariable Long id, Pageable pageable) { 
 		return service.findPersonContacts(id,pageable);
-	}
+	 }
 	
 	@GetMapping("/persons/{id}/contacts/{contactId}")
 	ContactInfo getPersonContact(@PathVariable Long id, @PathVariable Long contactId) { 
 		return service.findPersonContact(id, contactId);
-	}
+	 }
 	
 	@GetMapping("/persons/{id}/name")
 	NameOnly getPersonName(@PathVariable Long id) { 
 		return service.findPersonName(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/address")
 	AddressDTO getPersonAddress(@PathVariable Long id) { 
 		return service.findPersonAddress(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/birthday")
 	BirthDayOnly getPersonBirthDay(@PathVariable Long id) { 
 		return service.findPersonBirthDay(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/datehired")
 	DateHiredOnly getPersonDateHired(@PathVariable Long id) { 
 		return service.findPersonDateHired(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/gender")
 	GenderOnly getPersonGender(@PathVariable Long id) { 
 		return service.findPersonGender(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/gwa")
 	GwaOnly getPersonGwa(@PathVariable Long id) { 
 		return service.findPersonGwa(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/school")
 	SchoolOnly getPersonSchool(@PathVariable Long id) { 
 		return service.findPersonSchool(id);
-	}
+	 }
 	@GetMapping("/persons/{id}/employed")
 	EmployedOnly getPersonEmployed(@PathVariable Long id) {
 		return service.findPersonEmployed(id);
-	}
+	 }
 	
 	@GetMapping("/persons/{id}/roles")
 	List<RolesInfo> getPersonRoles(@PathVariable Long id) { 
@@ -87,11 +91,20 @@ class PersonController {
 	 }
 	
 	@PostMapping(path="/persons", consumes="application/json;charset=UTF-8")
-	PersonDTO newPerson(@RequestBody PersonDTO newPerson) {
-		//System.out.println(newPerson);
-		return newPerson;
+	PersonDTO addNewPerson(@RequestBody PersonDTO newPerson) {
+		return service.add(newPerson);
 	 }
-
+	
+	@PostMapping(path="/persons/{personId}/contacts", consumes="application/json;charset=UTF-8")
+	Contact addNewPerson(@RequestBody ContactDTO newContact, @PathVariable Long personId) {
+		return service.addContact(newContact, personId);
+	 }
+	
+	@PostMapping(path="/persons/{personId}/roles", consumes="application/json;charset=UTF-8")
+	Person addARole(@RequestBody RolesDTO role, @PathVariable Long personId) { 
+		return service.addRole(role,personId);
+	}
+	
 	// Single item
 	@GetMapping("/persons/{id}")
 	PersonDTO one(@PathVariable Long id) {
@@ -107,4 +120,20 @@ class PersonController {
 	void deletePerson(@PathVariable Long id) {
 		service.deleteById(id);
 	 }
+	//TODO: ADD MORE PATCHMAPPING
+	/*@PatchMapping("/persons/{id}/name")
+
+	@PatchMapping("/persons/{id}/address")
+
+	@PatchMapping("/persons/{id}/birthday")
+
+	@PatchMapping("/persons/{id}/datehired")
+
+	@PatchMapping("/persons/{id}/gender")
+
+	@PatchMapping("/persons/{id}/gwa")
+	@PatchMapping("/persons/{id}/school")
+
+	@PatchMapping("/persons/{id}/employed")
+	*/
 }

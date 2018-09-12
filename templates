@@ -1,0 +1,25 @@
+Person
+
+{ 
+"name":{
+	"firstName":"Markus",
+	"lastName":"Aurellius",
+	"middleName":"Ignatius"
+},
+"birthDay":"1994-01-12",
+"dateHired":null,
+"gwa":4.50,
+"gender":"MALE",
+"employed":false,
+"school":"PUP",
+"address":{
+	"streetNumber":"92",
+	"city":"Antipolo",
+	"zipCode":"1100"
+	}
+}
+
+Contact
+{			"type": "LANDLINE",
+            "details": "87000"
+}

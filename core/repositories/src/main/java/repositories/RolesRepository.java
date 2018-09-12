@@ -17,5 +17,7 @@ public interface RolesRepository extends JpaRepository<Roles,Long> {
 	
 	//@Query(value="SELECT r FROM Roles r WHERE r.id = :roleId AND r.persons.id = :id")
 	RolesInfo findOneByPersonsIdAndId(Long personId,Long roleId);
-
+	
+	Roles findRolesByLabel(String label);
+	
  }

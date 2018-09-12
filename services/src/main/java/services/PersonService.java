@@ -4,8 +4,13 @@ import models.person.interfaces.*;
 import models.person.dto.PersonDTO;
 import models.address.Address;
 import models.address.dto.AddressDTO;
+import models.contact.Contact;
+import models.contact.dto.ContactDTO;
+import models.roles.dto.RolesDTO;
+import models.roles.Roles;
 import repositories.*;
 
+import java.util.Optional;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,11 +27,13 @@ public class PersonService {
 	private final PersonRepository pr;
 	private final ContactRepository cr;
 	private final RolesRepository rr;
+	private final AddressRepository ar;
 	private final ModelMapper modelMapper = new ModelMapper();	
-	PersonService(PersonRepository pr, ContactRepository cr, RolesRepository rr) {
+	PersonService(PersonRepository pr, ContactRepository cr, RolesRepository rr, AddressRepository ar) {
 		this.pr = pr;
 	 	this.cr = cr;
 	 	this.rr = rr;
+	 	this.ar = ar;
 	 }
 	
 	public List<PersonDTO> findAll() {
@@ -113,5 +120,41 @@ public class PersonService {
 	public RolesInfo findPersonRole(Long personsId, Long roleId) {
 		return rr.findOneByPersonsIdAndId(personsId,roleId);
 	 }
+	
+	//Post new person
+	public PersonDTO add(PersonDTO newPerson) {
+		Address newAddress = modelMapper.map(newPerson.getAddress(),Address.class); 
+		ar.save(newAddress);
+		Person personEntity = modelMapper.map(newPerson,Person.class);
+		personEntity.setAddress(newAddress);	
+		
+		return modelMapper.map(pr.save(personEntity),PersonDTO.class);
+	}
+	
+	public Contact addContact(ContactDTO contactdto,Long personId) { 
+		Contact newContact = modelMapper.map(contactdto, Contact.class);
+		Person person = pr.findById(personId)
+				 .orElseThrow(() -> new EntityNotFoundException(personId));
+		newContact.setPerson(person);
+		return cr.save(newContact);
+	}
+	
+	public Person addRole(RolesDTO roledto, Long personId) { 
+		Optional<Long> optId = Optional.ofNullable(roledto.getId());
+		Roles selectedRole = null;
+		Person selectedPerson = pr.findById(personId)
+								  .orElseThrow(() -> new EntityNotFoundException(personId));
+		
+		if(optId.isPresent()) { 
+			
+			selectedRole = rr.findById(optId.get())
+			  				 .orElseThrow(() -> new EntityNotFoundException(optId.get()));
+			
+			selectedPerson.getRoles().add(selectedRole);
+		}
+			return pr.save(selectedPerson);
+		
+		
+	}
 	//TODO: ADD options to update only specific fields
  }

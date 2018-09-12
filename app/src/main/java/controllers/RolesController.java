@@ -29,7 +29,7 @@ class RolesController {
 	}
 
 	@PostMapping("/roles")
-	Roles newRoles(@RequestBody Roles newRoles) {
+	RolesDTO newRoles(@RequestBody RolesDTO newRoles) {
 		return service.save(newRoles);
 	}
 

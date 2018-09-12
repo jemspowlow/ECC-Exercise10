@@ -10,7 +10,6 @@ import org.springframework.data.domain.Page;
 
 import java.util.List;
 @Repository
-
 public interface ContactRepository extends JpaRepository<Contact,Long> { 
 	//finds all contacts of a given person
 	Page<ContactInfo> findContactsByPersonId(Long id, Pageable pageable);	
