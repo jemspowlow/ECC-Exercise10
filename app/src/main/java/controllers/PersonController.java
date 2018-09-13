@@ -121,8 +121,9 @@ class PersonController {
 		service.deleteById(id);
 	 }
 	//TODO: ADD MORE PATCHMAPPING
-	/*@PatchMapping("/persons/{id}/name")
-
+	/*
+	@PatchMapping("/persons/{id}/name")
+	
 	@PatchMapping("/persons/{id}/address")
 
 	@PatchMapping("/persons/{id}/birthday")
