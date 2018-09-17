@@ -6,13 +6,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.context.annotation.ComponentScan;
 @Service
 public class ContactService {
 
 	private final ContactRepository cr;
-	private final ModelMapper modelMapper = new ModelMapper();
+	private final MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+	private final MapperFacade modelMapper = mapperFactory.getMapperFacade();
 	ContactService(ContactRepository cr) {
 		this.cr = cr;
 	 }

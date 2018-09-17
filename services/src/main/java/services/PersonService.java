@@ -20,7 +20,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.context.annotation.ComponentScan;
 import org.modelmapper.ModelMapper;
-
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
+import ma.glasnost.orika.BoundMapperFacade;
 @Service
 public class PersonService {
 	
@@ -28,18 +31,29 @@ public class PersonService {
 	private final ContactRepository cr;
 	private final RolesRepository rr;
 	private final AddressRepository ar;
-	private final ModelMapper modelMapper = new ModelMapper();	
+	private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+	
+	private BoundMapperFacade<Person, PersonDTO> personMapper =  mapperFactory.getMapperFacade(Person.class, PersonDTO.class);
+	private BoundMapperFacade<Address, AddressDTO> addressMapper =  mapperFactory.getMapperFacade(Address.class, AddressDTO.class);
+	private BoundMapperFacade<Contact, ContactDTO> contactMapper =  mapperFactory.getMapperFacade(Contact.class, ContactDTO.class);
+	private BoundMapperFacade<Roles, RolesDTO> rolesMapper =  mapperFactory.getMapperFacade(Roles.class, RolesDTO.class);	
+	private MapperFacade modelMapper = mapperFactory.getMapperFacade();	
+	
 	PersonService(PersonRepository pr, ContactRepository cr, RolesRepository rr, AddressRepository ar) {
 		this.pr = pr;
 	 	this.cr = cr;
 	 	this.rr = rr;
 	 	this.ar = ar;
+	 	mapperFactory.classMap(Person.class, PersonDTO.class).byDefault();
+	 	mapperFactory.classMap(Address.class, AddressDTO.class).byDefault();
+	 	mapperFactory.classMap(Contact.class, ContactDTO.class).byDefault();
+	 	mapperFactory.classMap(Roles.class, RolesDTO.class).byDefault();
 	 }
 	
 	public List<PersonDTO> findAll() {
 		List<Person> persons = pr.findAll();
 	 	List<PersonDTO> personsDTO = persons.stream()
-	 		  .map(person -> modelMapper.map(person,PersonDTO.class))
+	 		  .map(person -> personMapper.map(person))
 	 		  .collect(Collectors.toList());
 	 	return personsDTO;
 	 }
@@ -51,10 +65,10 @@ public class PersonService {
 	public PersonDTO findOne(Long id) { 
 		Person person = pr.findById(id)
 				 .orElseThrow(() -> new EntityNotFoundException(id));
-		return modelMapper.map(person,PersonDTO.class);
+		return personMapper.map(person);
 	}
 	
-	public Person updatePerson(Person newPerson, Long id) { 
+	public PersonDTO updatePerson(Person newPerson, Long id) { 
 		
 		return pr.findById(id)
 			.map(person -> {
@@ -67,11 +81,11 @@ public class PersonService {
 				person.setAddress(newPerson.getAddress());
 				person.setDateHired(newPerson.getDateHired());
 				person.setRoles(newPerson.getRoles());
-				return pr.save(person);
+				return personMapper.map(pr.save(person));
 			})
 			.orElseGet(() -> {
 				newPerson.setId(id);
-				return pr.save(newPerson);
+				return personMapper.map(pr.save(newPerson));
 			});
 	}
 	
@@ -93,7 +107,7 @@ public class PersonService {
 	public AddressDTO findPersonAddress(Long id) { 
 		
 		Address address = pr.findPersonAddress(id);
-		AddressDTO addressdto = modelMapper.map(address,AddressDTO.class);
+		AddressDTO addressdto = addressMapper.map(address);
 		return addressdto;
 	}
 	public BirthDayOnly findPersonBirthDay(Long id){
@@ -123,23 +137,23 @@ public class PersonService {
 	
 	//Post new person
 	public PersonDTO add(PersonDTO newPerson) {
-		Address newAddress = modelMapper.map(newPerson.getAddress(),Address.class); 
+		Address newAddress = addressMapper.mapReverse(newPerson.getAddress()); 
 		ar.save(newAddress);
-		Person personEntity = modelMapper.map(newPerson,Person.class);
+		Person personEntity = personMapper.mapReverse(newPerson);
 		personEntity.setAddress(newAddress);	
 		
-		return modelMapper.map(pr.save(personEntity),PersonDTO.class);
+		return personMapper.map(pr.save(personEntity));
 	}
 	
-	public Contact addContact(ContactDTO contactdto,Long personId) { 
-		Contact newContact = modelMapper.map(contactdto, Contact.class);
+	public ContactDTO addContact(ContactDTO contactdto,Long personId) { 
+		Contact newContact = contactMapper.mapReverse(contactdto);
 		Person person = pr.findById(personId)
 				 .orElseThrow(() -> new EntityNotFoundException(personId));
 		newContact.setPerson(person);
-		return cr.save(newContact);
+		return contactMapper.map(cr.save(newContact));
 	}
 	
-	public Person addRole(RolesDTO roledto, Long personId) { 
+	public PersonDTO addRole(RolesDTO roledto, Long personId) { 
 		Optional<Long> optId = Optional.ofNullable(roledto.getId());
 		Roles selectedRole = null;
 		Person selectedPerson = pr.findById(personId)
@@ -152,7 +166,7 @@ public class PersonService {
 			
 			selectedPerson.getRoles().add(selectedRole);
 		}
-			return pr.save(selectedPerson);
+			return personMapper.map(pr.save(selectedPerson));
 		
 		
 	}

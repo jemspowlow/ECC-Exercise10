@@ -96,12 +96,12 @@ class PersonController {
 	 }
 	
 	@PostMapping(path="/persons/{personId}/contacts", consumes="application/json;charset=UTF-8")
-	Contact addNewPerson(@RequestBody ContactDTO newContact, @PathVariable Long personId) {
+	ContactDTO addNewPerson(@RequestBody ContactDTO newContact, @PathVariable Long personId) {
 		return service.addContact(newContact, personId);
 	 }
 	
 	@PostMapping(path="/persons/{personId}/roles", consumes="application/json;charset=UTF-8")
-	Person addARole(@RequestBody RolesDTO role, @PathVariable Long personId) { 
+	PersonDTO addARole(@RequestBody RolesDTO role, @PathVariable Long personId) { 
 		return service.addRole(role,personId);
 	}
 	
@@ -112,7 +112,7 @@ class PersonController {
 	 }
 	
 	@PutMapping("/persons/{id}") 
-	Person updatePerson(@RequestBody Person newPerson, @PathVariable Long id) { 
+	PersonDTO updatePerson(@RequestBody Person newPerson, @PathVariable Long id) { 
 		return service.updatePerson(newPerson, id);
 	 }
 	

@@ -2,20 +2,22 @@ package services;
 import models.roles.Roles;
 import models.roles.dto.RolesDTO;
 import repositories.*;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 @Service
 public class RolesService {
 
 	private final RolesRepository rr;
-	private final ModelMapper modelMapper = new ModelMapper();
-	
+	private final MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+	private final MapperFacade modelMapper = mapperFactory.getMapperFacade();
 	RolesService(RolesRepository rr) {
 		this.rr = rr;
 	 }
