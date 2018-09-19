@@ -12,31 +12,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 @RestController
 class RolesController {
 
 	private final RolesService service;
+	Logger logger = LoggerFactory.getLogger(RolesController.class);
 
 	RolesController(RolesService service) {
 		this.service = service;
+		logger.info("RolesController instantiated.");	
 	}
 
-	// Aggregate root
-	@GetMapping("/roles")
+ 	@GetMapping("/roles")
 	List<RolesDTO> all() {
+		logger.info("[GET] /roles");
 		return service.findAll();
 	}
 
 	@PostMapping("/roles")
 	RolesDTO newRoles(@RequestBody RolesDTO newRoles) {
+		logger.info("[POST] /roles");
 		return service.save(newRoles);
 	}
 
 	// Single item
 	@GetMapping("/roles/{id}")
 	RolesDTO one(@PathVariable Long id) {
-
+		logger.info("[GET] /roles/"+id);
 		return service.findOne(id);
 	}
 	/*
@@ -49,6 +53,7 @@ class RolesController {
 	
 	@DeleteMapping("/roles/{id}")
 	void deleteRoles(@PathVariable Long id) {
+		logger.info("[DELETE] /roles/"+id);
 		service.deleteById(id);
 	}
 }

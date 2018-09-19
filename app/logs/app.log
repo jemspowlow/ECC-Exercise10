@@ -1,209 +1,633 @@
-2018-09-18 15:52:37.146  INFO 16695 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 16695 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
-2018-09-18 15:52:37.155  INFO 16695 --- [main] controllers.Application                  : No active profile set, falling back to default profiles: default
-2018-09-18 15:52:37.308  INFO 16695 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@27bddacb: startup date [Tue Sep 18 15:52:37 PHT 2018]; root of context hierarchy
-2018-09-18 15:52:39.367  INFO 16695 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8e002bf5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-09-18 15:52:40.855  INFO 16695 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2018-09-18 15:52:40.932  INFO 16695 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-09-18 15:52:40.933  INFO 16695 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2018-09-18 15:52:40.954  INFO 16695 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
-2018-09-18 15:52:41.103  INFO 16695 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-09-18 15:52:41.104  INFO 16695 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3796 ms
-2018-09-18 15:52:41.268  INFO 16695 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-09-18 15:52:41.269  INFO 16695 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-09-18 15:52:41.269  INFO 16695 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-09-18 15:52:41.270  INFO 16695 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-09-18 15:52:41.270  INFO 16695 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2018-09-18 15:52:41.271  INFO 16695 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2018-09-18 15:52:41.630  INFO 16695 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2018-09-18 15:52:42.013  INFO 16695 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2018-09-18 15:52:42.150  INFO 16695 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-09-18 15:52:42.185  INFO 16695 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-09-19 08:58:43.157  INFO 9188 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 9188 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
+2018-09-19 08:58:43.161  INFO 9188 --- [main] controllers.Application                  : The following profiles are active: sushi
+2018-09-19 08:58:43.290  INFO 9188 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@684ba539: startup date [Wed Sep 19 08:58:43 PHT 2018]; root of context hierarchy
+2018-09-19 08:58:45.607  INFO 9188 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d3a6d667] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 08:58:46.369  INFO 9188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-19 08:58:46.429  INFO 9188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-19 08:58:46.430  INFO 9188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-19 08:58:46.450  INFO 9188 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-09-19 08:58:46.579  INFO 9188 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-19 08:58:46.580  INFO 9188 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3291 ms
+2018-09-19 08:58:46.701  INFO 9188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-19 08:58:46.702  INFO 9188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-19 08:58:46.702  INFO 9188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-19 08:58:46.702  INFO 9188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-19 08:58:46.703  INFO 9188 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-19 08:58:46.704  INFO 9188 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-19 08:58:46.978  INFO 9188 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2018-09-19 08:58:47.135  INFO 9188 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2018-09-19 08:58:47.267  INFO 9188 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-19 08:58:47.307  INFO 9188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-09-18 15:52:42.332  INFO 16695 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
-2018-09-18 15:52:42.335  INFO 16695 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-09-18 15:52:42.394  INFO 16695 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-09-18 15:52:42.561  INFO 16695 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2018-09-18 15:52:42.598  INFO 16695 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
-2018-09-18 15:52:42.601  INFO 16695 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1f687223
-2018-09-18 15:52:43.635  WARN 16695 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42102, SQLState: 42S02
-2018-09-18 15:52:43.636 ERROR 16695 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table "PG_CLASS" not found; SQL statement:
-select relname from pg_class where relkind='S' [42102-197]
-2018-09-18 15:52:43.638  WARN 16695 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to build DatabaseInformation
-2018-09-18 15:52:43.639  INFO 16695 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2018-09-18 15:52:43.643  INFO 16695 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2018-09-18 15:52:43.646  INFO 16695 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-09-18 15:52:43.766  INFO 16695 --- [main] ConditionEvaluationReportLoggingListener : 
+2018-09-19 08:58:47.436  INFO 9188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-19 08:58:47.439  INFO 9188 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-19 08:58:47.513  INFO 9188 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-19 08:58:47.670  INFO 9188 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-19 08:58:47.693  INFO 9188 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-09-19 08:58:47.696  INFO 9188 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3366f3af
+2018-09-19 08:58:49.097  INFO 9188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 08:58:49.780  INFO 9188 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-19 08:58:50.433  INFO 9188 --- [main] controllers.PersonController             : PersonController instantiated.
+2018-09-19 08:58:50.836  WARN 9188 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2018-09-19 08:58:51.360  INFO 9188 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76be4b41, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c98265e, org.springframework.security.web.header.HeaderWriterFilter@59237449, org.springframework.security.web.csrf.CsrfFilter@7c11ed77, org.springframework.security.web.authentication.logout.LogoutFilter@46337f37, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5afc3494, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37e7a5a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5870a063, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74f77398, org.springframework.security.web.session.SessionManagementFilter@73cebff2, org.springframework.security.web.access.ExceptionTranslationFilter@91e4fd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c6c6dc7]
+2018-09-19 08:58:51.542  INFO 9188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 08:58:51.903  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@684ba539: startup date [Wed Sep 19 08:58:43 PHT 2018]; root of context hierarchy
+2018-09-19 08:58:51.997  WARN 9188 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-19 08:58:52.068  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
+2018-09-19 08:58:52.070  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
+2018-09-19 08:58:52.071  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 08:58:52.071  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 08:58:52.072  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
+2018-09-19 08:58:52.073  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
+2018-09-19 08:58:52.074  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
+2018-09-19 08:58:52.090  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
+2018-09-19 08:58:52.092  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
+2018-09-19 08:58:52.093  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
+2018-09-19 08:58:52.094  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
+2018-09-19 08:58:52.094  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
+2018-09-19 08:58:52.095  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
+2018-09-19 08:58:52.096  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
+2018-09-19 08:58:52.097  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
+2018-09-19 08:58:52.098  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
+2018-09-19 08:58:52.100  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
+2018-09-19 08:58:52.101  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 08:58:52.103  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
+2018-09-19 08:58:52.104  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
+2018-09-19 08:58:52.105  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
+2018-09-19 08:58:52.105  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
+2018-09-19 08:58:52.106  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
+2018-09-19 08:58:52.107  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
+2018-09-19 08:58:52.107  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
+2018-09-19 08:58:52.108  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
+2018-09-19 08:58:52.111  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
+2018-09-19 08:58:52.112  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
+2018-09-19 08:58:52.113  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
+2018-09-19 08:58:52.114  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
+2018-09-19 08:58:52.115  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
+2018-09-19 08:58:52.116  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
+2018-09-19 08:58:52.122  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-19 08:58:52.123  INFO 9188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-19 08:58:52.175  INFO 9188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 08:58:52.175  INFO 9188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 08:58:52.206  INFO 9188 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
+2018-09-19 08:58:52.587  INFO 9188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-19 08:58:52.590  INFO 9188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-19 08:58:52.598  INFO 9188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-19 08:58:52.656  INFO 9188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-19 08:58:52.661  INFO 9188 --- [main] controllers.Application                  : Started Application in 10.356 seconds (JVM running for 15.334)
+2018-09-19 09:00:23.317  INFO 9188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-19 09:00:23.318  INFO 9188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-19 09:00:23.349  INFO 9188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+2018-09-19 09:00:38.892  INFO 9188 --- [http-nio-8080-exec-4] controllers.PersonController             : [GET] /persons
+2018-09-19 10:06:27.677  INFO 9188 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@684ba539: startup date [Wed Sep 19 08:58:43 PHT 2018]; root of context hierarchy
+2018-09-19 10:06:27.681  INFO 9188 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-19 10:06:27.683  INFO 9188 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-19 10:06:27.695  INFO 9188 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 10:06:27.697  INFO 9188 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2018-09-19 10:06:27.702  INFO 9188 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2018-09-19 10:07:12.096  INFO 11175 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 11175 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
+2018-09-19 10:07:12.103  INFO 11175 --- [main] controllers.Application                  : The following profiles are active: sushi
+2018-09-19 10:07:12.234  INFO 11175 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16d41c9e: startup date [Wed Sep 19 10:07:12 PHT 2018]; root of context hierarchy
+2018-09-19 10:07:14.683  INFO 11175 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e6ebbc14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 10:07:15.371  INFO 11175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-19 10:07:15.423  INFO 11175 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-19 10:07:15.424  INFO 11175 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-19 10:07:15.448  INFO 11175 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-09-19 10:07:15.584  INFO 11175 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-19 10:07:15.588  INFO 11175 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3354 ms
+2018-09-19 10:07:15.761  INFO 11175 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-19 10:07:15.762  INFO 11175 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-19 10:07:15.763  INFO 11175 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-19 10:07:15.764  INFO 11175 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-19 10:07:15.765  INFO 11175 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-19 10:07:15.765  INFO 11175 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-19 10:07:16.147  INFO 11175 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2018-09-19 10:07:16.410  INFO 11175 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2018-09-19 10:07:16.556  INFO 11175 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-19 10:07:16.590  INFO 11175 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-19 10:07:16.716  INFO 11175 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-19 10:07:16.718  INFO 11175 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-19 10:07:16.767  INFO 11175 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-19 10:07:16.906  INFO 11175 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-19 10:07:16.946  INFO 11175 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-09-19 10:07:16.950  INFO 11175 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6554d51
+2018-09-19 10:07:18.415  INFO 11175 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 10:07:19.033  INFO 11175 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-19 10:07:19.341  INFO 11175 --- [main] controllers.ContactController            : ContactController instantiated.
+2018-09-19 10:07:19.585  INFO 11175 --- [main] controllers.PersonController             : PersonController instantiated.
+2018-09-19 10:07:19.602  INFO 11175 --- [main] controllers.RolesController              : RolesController instantiated.
+2018-09-19 10:07:20.010  WARN 11175 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2018-09-19 10:07:20.446  INFO 11175 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fd4d010, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c934252, org.springframework.security.web.header.HeaderWriterFilter@784bbb2e, org.springframework.security.web.csrf.CsrfFilter@410d1d07, org.springframework.security.web.authentication.logout.LogoutFilter@713fbbcf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4ff40b21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d9477ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3082c4df, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49bca264, org.springframework.security.web.session.SessionManagementFilter@80b78f1, org.springframework.security.web.access.ExceptionTranslationFilter@41e70a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67ae8a12]
+2018-09-19 10:07:20.638  INFO 11175 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 10:07:21.061  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16d41c9e: startup date [Wed Sep 19 10:07:12 PHT 2018]; root of context hierarchy
+2018-09-19 10:07:21.162  WARN 11175 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-19 10:07:21.279  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
+2018-09-19 10:07:21.284  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
+2018-09-19 10:07:21.284  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 10:07:21.285  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 10:07:21.286  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
+2018-09-19 10:07:21.286  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
+2018-09-19 10:07:21.294  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
+2018-09-19 10:07:21.332  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
+2018-09-19 10:07:21.333  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
+2018-09-19 10:07:21.336  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
+2018-09-19 10:07:21.338  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
+2018-09-19 10:07:21.342  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
+2018-09-19 10:07:21.351  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
+2018-09-19 10:07:21.352  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
+2018-09-19 10:07:21.353  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
+2018-09-19 10:07:21.353  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
+2018-09-19 10:07:21.354  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
+2018-09-19 10:07:21.355  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
+2018-09-19 10:07:21.355  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
+2018-09-19 10:07:21.357  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
+2018-09-19 10:07:21.357  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 10:07:21.358  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
+2018-09-19 10:07:21.359  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
+2018-09-19 10:07:21.359  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
+2018-09-19 10:07:21.360  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
+2018-09-19 10:07:21.361  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
+2018-09-19 10:07:21.371  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
+2018-09-19 10:07:21.372  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
+2018-09-19 10:07:21.373  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
+2018-09-19 10:07:21.374  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
+2018-09-19 10:07:21.376  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
+2018-09-19 10:07:21.376  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
+2018-09-19 10:07:21.387  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-19 10:07:21.388  INFO 11175 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-19 10:07:21.459  INFO 11175 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 10:07:21.459  INFO 11175 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 10:07:21.502  INFO 11175 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
+2018-09-19 10:07:21.940  INFO 11175 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-19 10:07:21.944  INFO 11175 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-19 10:07:21.954  INFO 11175 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-19 10:07:22.017  INFO 11175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-19 10:07:22.023  INFO 11175 --- [main] controllers.Application                  : Started Application in 10.728 seconds (JVM running for 15.716)
+2018-09-19 10:07:47.784  INFO 11175 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-19 10:07:47.784  INFO 11175 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-19 10:07:47.810  INFO 11175 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2018-09-19 10:07:48.186  INFO 11175 --- [http-nio-8080-exec-1] controllers.PersonController             : [GET] /persons
+2018-09-19 10:32:17.880  INFO 11175 --- [http-nio-8080-exec-5] controllers.PersonController             : [GET] /persons
+2018-09-19 16:12:45.767  INFO 11175 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16d41c9e: startup date [Wed Sep 19 10:07:12 PHT 2018]; root of context hierarchy
+2018-09-19 16:12:46.125  INFO 11175 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-19 16:12:46.156  INFO 11175 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-19 16:12:46.275  INFO 11175 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:12:46.410  INFO 11175 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2018-09-19 16:12:46.516  INFO 11175 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2018-09-19 16:15:28.377  INFO 22067 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 22067 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
+2018-09-19 16:15:28.384  INFO 22067 --- [main] controllers.Application                  : The following profiles are active: sushi
+2018-09-19 16:15:28.486  INFO 22067 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@25131c09: startup date [Wed Sep 19 16:15:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:15:30.477  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:30.518  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:30.564  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:30.643  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:30.646  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'applicationConfig' of type [controllers.ApplicationConfig$$EnhancerBySpringCGLIB$$e289e64f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:30.787  INFO 22067 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f50bcf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:15:31.691  INFO 22067 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-19 16:15:31.758  INFO 22067 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-19 16:15:31.759  INFO 22067 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-19 16:15:31.782  INFO 22067 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-09-19 16:15:31.910  INFO 22067 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-19 16:15:31.910  INFO 22067 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3424 ms
+2018-09-19 16:15:32.054  INFO 22067 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-19 16:15:32.055  INFO 22067 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-19 16:15:32.055  INFO 22067 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-19 16:15:32.055  INFO 22067 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-19 16:15:32.056  INFO 22067 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-19 16:15:32.056  INFO 22067 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-19 16:15:32.188  INFO 22067 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:15:32.223  INFO 22067 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-19 16:15:32.352  INFO 22067 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-19 16:15:32.354  INFO 22067 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-19 16:15:32.420  INFO 22067 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-19 16:15:32.582  INFO 22067 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2018-09-19 16:15:32.786  INFO 22067 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2018-09-19 16:15:32.809  INFO 22067 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2018-09-19 16:15:33.260  INFO 22067 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-09-18 15:52:43.775 ERROR 16695 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to build DatabaseInformation
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at controllers.Application.main(Application.java:22) [classes/:na]
+java.lang.reflect.InvocationTargetException: null
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
-	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) [spring-boot-maven-plugin-2.0.4.RELEASE.jar:2.0.4.RELEASE]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to build DatabaseInformation
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:402) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	... 22 common frames omitted
-Caused by: org.hibernate.exception.SQLGrammarException: Unable to build DatabaseInformation
-	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:106) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:111) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:97) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:140) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:312) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:892) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
-	... 26 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLException: Table "PG_CLASS" not found; SQL statement:
-select relname from pg_class where relkind='S' [42102-197]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.readTableOrView(Parser.java:5920) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.readTableFilter(Parser.java:1430) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:2138) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parseSelectSimple(Parser.java:2287) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parseSelectSub(Parser.java:2133) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parseSelectUnion(Parser.java:1946) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parseSelect(Parser.java:1919) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parsePrepared(Parser.java:463) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parse(Parser.java:335) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.parse(Parser.java:307) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.command.Parser.prepareCommand(Parser.java:278) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.engine.Session.prepareLocal(Session.java:611) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.engine.Session.prepareCommand(Session.java:549) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247) ~[h2-1.4.197.jar:1.4.197]
-	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78) ~[h2-1.4.197.jar:1.4.197]
-	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111) ~[HikariCP-3.2.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:42) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:132) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
-	... 35 common frames omitted
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.useContextualLobCreation(LobCreatorBuilderImpl.java:113) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.makeLobCreatorBuilder(LobCreatorBuilderImpl.java:54) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:271) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:259) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:233) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:242) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:861) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:888) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at controllers.Application.main(Application.java:22) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) ~[na:na]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_171]
+Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:688) ~[postgresql-42.2.4.jar:42.2.4]
+	at org.postgresql.jdbc.PgConnection.createClob(PgConnection.java:1269) ~[postgresql-42.2.4.jar:42.2.4]
+	... 50 common frames omitted
 
-2018-09-18 15:53:07.763  INFO 16750 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 16750 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
-2018-09-18 15:53:07.770  INFO 16750 --- [main] controllers.Application                  : The following profiles are active: sushi
-2018-09-18 15:53:07.908  INFO 16750 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c6f0b95: startup date [Tue Sep 18 15:53:07 PHT 2018]; root of context hierarchy
-2018-09-18 15:53:10.024  INFO 16750 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8d6027fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-09-18 15:53:10.729  INFO 16750 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2018-09-18 15:53:10.779  INFO 16750 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-09-18 15:53:10.779  INFO 16750 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2018-09-18 15:53:10.805  INFO 16750 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
-2018-09-18 15:53:10.927  INFO 16750 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-09-18 15:53:10.928  INFO 16750 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3020 ms
-2018-09-18 15:53:11.094  INFO 16750 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-09-18 15:53:11.096  INFO 16750 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-09-18 15:53:11.097  INFO 16750 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-09-18 15:53:11.097  INFO 16750 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-09-18 15:53:11.098  INFO 16750 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2018-09-18 15:53:11.099  INFO 16750 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2018-09-18 15:53:11.427  INFO 16750 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2018-09-18 15:53:12.146  INFO 16750 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2018-09-18 15:53:12.236  INFO 16750 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-09-18 15:53:12.262  INFO 16750 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-09-19 16:15:33.277  INFO 22067 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5afc2634
+2018-09-19 16:15:35.312  INFO 22067 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:15:35.931  INFO 22067 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-19 16:15:36.302  INFO 22067 --- [main] controllers.ContactController            : ContactController instantiated.
+2018-09-19 16:15:36.529  INFO 22067 --- [main] controllers.PersonController             : PersonController instantiated.
+2018-09-19 16:15:36.546  INFO 22067 --- [main] controllers.RolesController              : RolesController instantiated.
+2018-09-19 16:15:36.988  WARN 22067 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2018-09-19 16:15:37.592  INFO 22067 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@234c7461, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d89f3aa, org.springframework.security.web.header.HeaderWriterFilter@3eb13c86, org.springframework.security.web.csrf.CsrfFilter@57f0cd0, org.springframework.security.web.authentication.logout.LogoutFilter@4984c409, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3cab4218, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e5ee57f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1136bd14, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13acec4, org.springframework.security.web.session.SessionManagementFilter@3ea33b57, org.springframework.security.web.access.ExceptionTranslationFilter@5833b91d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d696af0]
+2018-09-19 16:15:37.778  INFO 22067 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:15:38.127  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@25131c09: startup date [Wed Sep 19 16:15:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:15:38.225  WARN 22067 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-19 16:15:38.297  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
+2018-09-19 16:15:38.299  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
+2018-09-19 16:15:38.300  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:15:38.300  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:15:38.301  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
+2018-09-19 16:15:38.302  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
+2018-09-19 16:15:38.303  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
+2018-09-19 16:15:38.321  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
+2018-09-19 16:15:38.322  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
+2018-09-19 16:15:38.322  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
+2018-09-19 16:15:38.323  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
+2018-09-19 16:15:38.323  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
+2018-09-19 16:15:38.325  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:15:38.325  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
+2018-09-19 16:15:38.326  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
+2018-09-19 16:15:38.327  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
+2018-09-19 16:15:38.327  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
+2018-09-19 16:15:38.328  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
+2018-09-19 16:15:38.329  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
+2018-09-19 16:15:38.330  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
+2018-09-19 16:15:38.331  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
+2018-09-19 16:15:38.332  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
+2018-09-19 16:15:38.334  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
+2018-09-19 16:15:38.335  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
+2018-09-19 16:15:38.336  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
+2018-09-19 16:15:38.337  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
+2018-09-19 16:15:38.339  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
+2018-09-19 16:15:38.340  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
+2018-09-19 16:15:38.341  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
+2018-09-19 16:15:38.342  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
+2018-09-19 16:15:38.344  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
+2018-09-19 16:15:38.345  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
+2018-09-19 16:15:38.351  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-19 16:15:38.352  INFO 22067 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-19 16:15:38.414  INFO 22067 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:15:38.415  INFO 22067 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:15:38.454  INFO 22067 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
+2018-09-19 16:15:39.048  INFO 22067 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-19 16:15:39.052  INFO 22067 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-19 16:15:39.065  INFO 22067 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-19 16:15:39.160  INFO 22067 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-19 16:15:39.166  INFO 22067 --- [main] controllers.Application                  : Started Application in 11.718 seconds (JVM running for 16.463)
+2018-09-19 16:16:11.848  INFO 22067 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@25131c09: startup date [Wed Sep 19 16:15:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:16:11.855  INFO 22067 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-19 16:16:11.857  INFO 22067 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-19 16:16:11.872  INFO 22067 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:16:11.877  INFO 22067 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2018-09-19 16:16:11.892  INFO 22067 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2018-09-19 16:16:28.286  INFO 22154 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 22154 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
+2018-09-19 16:16:28.291  INFO 22154 --- [main] controllers.Application                  : The following profiles are active: sushi
+2018-09-19 16:16:28.388  INFO 22154 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36988e28: startup date [Wed Sep 19 16:16:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:16:30.217  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:30.241  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:30.288  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:30.367  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:30.370  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'applicationConfig' of type [controllers.ApplicationConfig$$EnhancerBySpringCGLIB$$37262e11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:30.504  INFO 22154 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$55915391] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:16:31.173  INFO 22154 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-19 16:16:31.236  INFO 22154 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-19 16:16:31.236  INFO 22154 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-19 16:16:31.258  INFO 22154 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-09-19 16:16:31.393  INFO 22154 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-19 16:16:31.394  INFO 22154 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3007 ms
+2018-09-19 16:16:31.524  INFO 22154 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-19 16:16:31.525  INFO 22154 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-19 16:16:31.525  INFO 22154 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-19 16:16:31.526  INFO 22154 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-19 16:16:31.526  INFO 22154 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-19 16:16:31.527  INFO 22154 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-19 16:16:31.670  INFO 22154 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:16:31.711  INFO 22154 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-09-18 15:53:12.370  INFO 16750 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
-2018-09-18 15:53:12.371  INFO 16750 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-09-18 15:53:12.422  INFO 16750 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-09-18 15:53:12.551  INFO 16750 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2018-09-18 15:53:12.571  INFO 16750 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
-2018-09-18 15:53:12.573  INFO 16750 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2de3c388
-2018-09-18 15:53:14.470  INFO 16750 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-09-18 15:53:15.156  INFO 16750 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2018-09-18 15:53:15.820  INFO 16750 --- [main] controllers.PersonController             : PersonController instantiated.
-2018-09-18 15:53:16.254  WARN 16750 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
-2018-09-18 15:53:16.942  INFO 16750 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3391d542, org.springframework.security.web.context.SecurityContextPersistenceFilter@44cd5100, org.springframework.security.web.header.HeaderWriterFilter@5f0044b3, org.springframework.security.web.csrf.CsrfFilter@3449f13d, org.springframework.security.web.authentication.logout.LogoutFilter@31666f78, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2d820657, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@88bfc42, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49eb9c84, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60dba90, org.springframework.security.web.session.SessionManagementFilter@538f4978, org.springframework.security.web.access.ExceptionTranslationFilter@5ce511ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27b4ee7d]
-2018-09-18 15:53:17.148  INFO 16750 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-09-18 15:53:17.514  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c6f0b95: startup date [Tue Sep 18 15:53:07 PHT 2018]; root of context hierarchy
-2018-09-18 15:53:17.630  WARN 16750 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-09-18 15:53:17.719  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
-2018-09-18 15:53:17.721  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
-2018-09-18 15:53:17.722  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
-2018-09-18 15:53:17.723  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
-2018-09-18 15:53:17.724  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
-2018-09-18 15:53:17.725  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
-2018-09-18 15:53:17.728  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
-2018-09-18 15:53:17.749  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
-2018-09-18 15:53:17.750  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
-2018-09-18 15:53:17.751  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
-2018-09-18 15:53:17.752  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
-2018-09-18 15:53:17.754  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
-2018-09-18 15:53:17.755  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
-2018-09-18 15:53:17.756  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
-2018-09-18 15:53:17.757  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
-2018-09-18 15:53:17.758  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
-2018-09-18 15:53:17.760  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
-2018-09-18 15:53:17.761  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
-2018-09-18 15:53:17.761  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
-2018-09-18 15:53:17.762  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
-2018-09-18 15:53:17.763  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
-2018-09-18 15:53:17.763  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
-2018-09-18 15:53:17.764  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
-2018-09-18 15:53:17.764  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
-2018-09-18 15:53:17.765  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
-2018-09-18 15:53:17.766  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
-2018-09-18 15:53:17.768  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
-2018-09-18 15:53:17.769  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
-2018-09-18 15:53:17.770  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
-2018-09-18 15:53:17.770  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
-2018-09-18 15:53:17.773  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
-2018-09-18 15:53:17.774  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
-2018-09-18 15:53:17.781  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-09-18 15:53:17.782  INFO 16750 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-09-18 15:53:17.844  INFO 16750 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-09-18 15:53:17.845  INFO 16750 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-09-18 15:53:17.879  INFO 16750 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
-2018-09-18 15:53:18.332  INFO 16750 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2018-09-18 15:53:18.338  INFO 16750 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
-2018-09-18 15:53:18.351  INFO 16750 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
-2018-09-18 15:53:18.443  INFO 16750 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2018-09-18 15:53:18.448  INFO 16750 --- [main] controllers.Application                  : Started Application in 11.512 seconds (JVM running for 16.651)
-2018-09-18 15:56:16.165  INFO 16750 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-09-18 15:56:16.166  INFO 16750 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2018-09-18 15:56:16.186  INFO 16750 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
-2018-09-18 15:56:26.859  INFO 16750 --- [http-nio-8080-exec-3] controllers.PersonController             : [GET] /persons
-2018-09-18 15:56:33.668  INFO 16750 --- [http-nio-8080-exec-4] controllers.PersonController             : [GET] /persons/1
-2018-09-18 15:56:43.121  INFO 16750 --- [http-nio-8080-exec-5] controllers.PersonController             : [GET] /persons/2
-2018-09-18 15:56:45.991  INFO 16750 --- [http-nio-8080-exec-6] controllers.PersonController             : [GET] /persons/4
-2018-09-18 15:56:53.203  INFO 16750 --- [http-nio-8080-exec-8] controllers.PersonController             : [GET] /persons/7
-2018-09-18 15:56:59.838  INFO 16750 --- [http-nio-8080-exec-9] controllers.PersonController             : [GET] /persons/7/roles
-2018-09-18 15:57:03.330  INFO 16750 --- [http-nio-8080-exec-10] controllers.PersonController             : [GET] /persons/7/contacts
-2018-09-18 15:57:05.877  INFO 16750 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c6f0b95: startup date [Tue Sep 18 15:53:07 PHT 2018]; root of context hierarchy
-2018-09-18 15:57:05.883  INFO 16750 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2018-09-18 15:57:05.886  INFO 16750 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
-2018-09-18 15:57:05.897  INFO 16750 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-09-18 15:57:05.900  INFO 16750 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2018-09-18 15:57:05.920  INFO 16750 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2018-09-19 16:16:31.818  INFO 22154 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-19 16:16:31.820  INFO 22154 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-19 16:16:31.887  INFO 22154 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-19 16:16:32.087  INFO 22154 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2018-09-19 16:16:32.561  INFO 22154 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2018-09-19 16:16:32.589  INFO 22154 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2018-09-19 16:16:32.846  INFO 22154 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.useContextualLobCreation(LobCreatorBuilderImpl.java:113) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.makeLobCreatorBuilder(LobCreatorBuilderImpl.java:54) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:271) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:259) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:233) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:242) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:861) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:888) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at controllers.Application.main(Application.java:19) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) ~[na:na]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_171]
+Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:688) ~[postgresql-42.2.4.jar:42.2.4]
+	at org.postgresql.jdbc.PgConnection.createClob(PgConnection.java:1269) ~[postgresql-42.2.4.jar:42.2.4]
+	... 50 common frames omitted
+
+2018-09-19 16:16:32.866  INFO 22154 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4a654e4d
+2018-09-19 16:16:33.819  INFO 22154 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:16:34.517  INFO 22154 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-19 16:16:34.995  INFO 22154 --- [main] controllers.ContactController            : ContactController instantiated.
+2018-09-19 16:16:35.268  INFO 22154 --- [main] controllers.PersonController             : PersonController instantiated.
+2018-09-19 16:16:35.283  INFO 22154 --- [main] controllers.RolesController              : RolesController instantiated.
+2018-09-19 16:16:35.771  WARN 22154 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2018-09-19 16:16:36.277  INFO 22154 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70147c38, org.springframework.security.web.context.SecurityContextPersistenceFilter@357721ea, org.springframework.security.web.header.HeaderWriterFilter@574b2cc7, org.springframework.security.web.csrf.CsrfFilter@4d9bec02, org.springframework.security.web.authentication.logout.LogoutFilter@6f2133e9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2c714ecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2597513e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7121444c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77a52188, org.springframework.security.web.session.SessionManagementFilter@60eba8d4, org.springframework.security.web.access.ExceptionTranslationFilter@5fc59d4d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@772471dd]
+2018-09-19 16:16:36.418  INFO 22154 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:16:36.755  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36988e28: startup date [Wed Sep 19 16:16:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:16:36.846  WARN 22154 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-19 16:16:36.915  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
+2018-09-19 16:16:36.917  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
+2018-09-19 16:16:36.918  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:16:36.919  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:16:36.920  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
+2018-09-19 16:16:36.921  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
+2018-09-19 16:16:36.922  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
+2018-09-19 16:16:36.942  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
+2018-09-19 16:16:36.943  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
+2018-09-19 16:16:36.944  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
+2018-09-19 16:16:36.945  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
+2018-09-19 16:16:36.946  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
+2018-09-19 16:16:36.946  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
+2018-09-19 16:16:36.947  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
+2018-09-19 16:16:36.948  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
+2018-09-19 16:16:36.950  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
+2018-09-19 16:16:36.951  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
+2018-09-19 16:16:36.952  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
+2018-09-19 16:16:36.953  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
+2018-09-19 16:16:36.955  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
+2018-09-19 16:16:36.956  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:16:36.957  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
+2018-09-19 16:16:36.957  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
+2018-09-19 16:16:36.958  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
+2018-09-19 16:16:36.958  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
+2018-09-19 16:16:36.959  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
+2018-09-19 16:16:36.960  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
+2018-09-19 16:16:36.961  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
+2018-09-19 16:16:36.961  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
+2018-09-19 16:16:36.962  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
+2018-09-19 16:16:36.964  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
+2018-09-19 16:16:36.964  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
+2018-09-19 16:16:36.969  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-19 16:16:36.970  INFO 22154 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-19 16:16:37.016  INFO 22154 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:16:37.016  INFO 22154 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:16:37.041  INFO 22154 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
+2018-09-19 16:16:37.464  INFO 22154 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-19 16:16:37.467  INFO 22154 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-19 16:16:37.478  INFO 22154 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-19 16:16:37.537  INFO 22154 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-19 16:16:37.543  INFO 22154 --- [main] controllers.Application                  : Started Application in 10.53 seconds (JVM running for 16.621)
+2018-09-19 16:17:09.091  INFO 22154 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-19 16:17:09.091  INFO 22154 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-19 16:17:09.121  INFO 22154 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+2018-09-19 16:17:09.480  INFO 22154 --- [http-nio-8080-exec-1] controllers.PersonController             : [GET] /persons
+2018-09-19 16:21:36.026  INFO 22154 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36988e28: startup date [Wed Sep 19 16:16:28 PHT 2018]; root of context hierarchy
+2018-09-19 16:21:36.036  INFO 22154 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-19 16:21:36.038  INFO 22154 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-19 16:21:36.051  INFO 22154 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:21:36.056  INFO 22154 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2018-09-19 16:21:36.074  INFO 22154 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2018-09-19 16:25:43.073  INFO 22789 --- [main] controllers.Application                  : Starting Application on L-R9CV2F8 with PID 22789 (/home/jmenguito/Desktop/James/ECC-Exercise10/app/target/classes started by jmenguito in /home/jmenguito/Desktop/James/ECC-Exercise10/app)
+2018-09-19 16:25:43.077  INFO 22789 --- [main] controllers.Application                  : The following profiles are active: sushi
+2018-09-19 16:25:43.157  INFO 22789 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5b89eef1: startup date [Wed Sep 19 16:25:43 PHT 2018]; root of context hierarchy
+2018-09-19 16:25:45.093  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:45.131  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:45.176  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:45.250  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:45.253  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'applicationConfig' of type [controllers.ApplicationConfig$$EnhancerBySpringCGLIB$$70ab778c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:45.439  INFO 22789 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f169d0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-19 16:25:46.041  INFO 22789 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-19 16:25:46.100  INFO 22789 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-19 16:25:46.137  INFO 22789 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-19 16:25:46.157  INFO 22789 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-09-19 16:25:46.304  INFO 22789 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-19 16:25:46.304  INFO 22789 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3148 ms
+2018-09-19 16:25:46.434  INFO 22789 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-19 16:25:46.436  INFO 22789 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-19 16:25:46.436  INFO 22789 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-19 16:25:46.437  INFO 22789 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-19 16:25:46.437  INFO 22789 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-19 16:25:46.438  INFO 22789 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-19 16:25:46.506  INFO 22789 --- [main] controllers.RolesController              : Entity Manager Factory created!
+2018-09-19 16:25:46.562  INFO 22789 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:25:46.604  INFO 22789 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-19 16:25:46.730  INFO 22789 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-19 16:25:46.733  INFO 22789 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-19 16:25:46.814  INFO 22789 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-19 16:25:47.040  INFO 22789 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2018-09-19 16:25:47.174  INFO 22789 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2018-09-19 16:25:47.194  INFO 22789 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2018-09-19 16:25:47.364  INFO 22789 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.useContextualLobCreation(LobCreatorBuilderImpl.java:113) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl.makeLobCreatorBuilder(LobCreatorBuilderImpl.java:54) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:271) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:259) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:233) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:242) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:210) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:861) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:888) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at controllers.Application.main(Application.java:22) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_171]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_171]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_171]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_171]
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:496) ~[na:na]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_171]
+Caused by: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+	at org.postgresql.Driver.notImplemented(Driver.java:688) ~[postgresql-42.2.4.jar:42.2.4]
+	at org.postgresql.jdbc.PgConnection.createClob(PgConnection.java:1269) ~[postgresql-42.2.4.jar:42.2.4]
+	... 50 common frames omitted
+
+2018-09-19 16:25:47.374  INFO 22789 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@75b8818b
+2018-09-19 16:25:48.437  INFO 22789 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:25:49.115  INFO 22789 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-19 16:25:49.508  INFO 22789 --- [main] controllers.ContactController            : ContactController instantiated.
+2018-09-19 16:25:49.741  INFO 22789 --- [main] controllers.PersonController             : PersonController instantiated.
+2018-09-19 16:25:49.760  INFO 22789 --- [main] controllers.RolesController              : RolesController instantiated.
+2018-09-19 16:25:50.040  INFO 22789 --- [main] controllers.RolesController              : Transaction Manager created!
+2018-09-19 16:25:50.191  WARN 22789 --- [main] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2018-09-19 16:25:50.696  INFO 22789 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c2add5, org.springframework.security.web.context.SecurityContextPersistenceFilter@60cb189, org.springframework.security.web.header.HeaderWriterFilter@327e2c97, org.springframework.security.web.csrf.CsrfFilter@128b71b0, org.springframework.security.web.authentication.logout.LogoutFilter@38e22a0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@311812cd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6da1eddb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59935169, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64de6bf1, org.springframework.security.web.session.SessionManagementFilter@766c82cb, org.springframework.security.web.access.ExceptionTranslationFilter@4d9632b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45e18b9e]
+2018-09-19 16:25:50.837  INFO 22789 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:25:51.176  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5b89eef1: startup date [Wed Sep 19 16:25:43 PHT 2018]; root of context hierarchy
+2018-09-19 16:25:51.272  WARN 22789 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-19 16:25:51.349  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[POST]}" onto models.contact.dto.ContactDTO controllers.ContactController.newContact(models.contact.dto.ContactDTO)
+2018-09-19 16:25:51.351  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[DELETE]}" onto void controllers.ContactController.deleteContact(java.lang.Long)
+2018-09-19 16:25:51.352  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/details],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactDetails(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:25:51.353  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}/type],methods=[PATCH]}" onto models.contact.dto.ContactDTO controllers.ContactController.editContactType(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:25:51.354  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts/{id}],methods=[GET]}" onto models.contact.dto.ContactDTO controllers.ContactController.one(java.lang.Long)
+2018-09-19 16:25:51.355  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/contacts],methods=[GET]}" onto java.util.List<models.contact.dto.ContactDTO> controllers.ContactController.all()
+2018-09-19 16:25:51.357  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto java.lang.String controllers.LoggerController.index()
+2018-09-19 16:25:51.389  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts],methods=[GET]}" onto org.springframework.data.domain.Page<models.person.interfaces.ContactInfo> controllers.PersonController.getPersonContacts(java.lang.Long,org.springframework.data.domain.Pageable)
+2018-09-19 16:25:51.390  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/contacts/{contactId}],methods=[GET]}" onto models.person.interfaces.ContactInfo controllers.PersonController.getPersonContact(java.lang.Long,java.lang.Long)
+2018-09-19 16:25:51.391  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/name],methods=[GET]}" onto models.person.interfaces.NameOnly controllers.PersonController.getPersonName(java.lang.Long)
+2018-09-19 16:25:51.392  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/address],methods=[GET]}" onto models.address.dto.AddressDTO controllers.PersonController.getPersonAddress(java.lang.Long)
+2018-09-19 16:25:51.392  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/birthday],methods=[GET]}" onto models.person.interfaces.BirthDayOnly controllers.PersonController.getPersonBirthDay(java.lang.Long)
+2018-09-19 16:25:51.393  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/datehired],methods=[GET]}" onto models.person.interfaces.DateHiredOnly controllers.PersonController.getPersonDateHired(java.lang.Long)
+2018-09-19 16:25:51.394  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gender],methods=[GET]}" onto models.person.interfaces.GenderOnly controllers.PersonController.getPersonGender(java.lang.Long)
+2018-09-19 16:25:51.395  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/gwa],methods=[GET]}" onto models.person.interfaces.GwaOnly controllers.PersonController.getPersonGwa(java.lang.Long)
+2018-09-19 16:25:51.396  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/school],methods=[GET]}" onto models.person.interfaces.SchoolOnly controllers.PersonController.getPersonSchool(java.lang.Long)
+2018-09-19 16:25:51.397  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/employed],methods=[GET]}" onto models.person.interfaces.EmployedOnly controllers.PersonController.getPersonEmployed(java.lang.Long)
+2018-09-19 16:25:51.397  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}/roles],methods=[GET]}" onto java.util.List<models.person.interfaces.RolesInfo> controllers.PersonController.getPersonRoles(java.lang.Long)
+2018-09-19 16:25:51.398  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles/{roleId}],methods=[GET]}" onto models.person.interfaces.RolesInfo controllers.PersonController.getPersonRole(java.lang.Long,java.lang.Long)
+2018-09-19 16:25:51.400  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addNewPerson(models.person.dto.PersonDTO)
+2018-09-19 16:25:51.401  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/contacts],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.contact.dto.ContactDTO controllers.PersonController.addNewPerson(models.contact.dto.ContactDTO,java.lang.Long)
+2018-09-19 16:25:51.402  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{personId}/roles],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.person.dto.PersonDTO controllers.PersonController.addARole(models.roles.dto.RolesDTO,java.lang.Long)
+2018-09-19 16:25:51.402  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[PUT]}" onto models.person.dto.PersonDTO controllers.PersonController.updatePerson(models.person.Person,java.lang.Long)
+2018-09-19 16:25:51.403  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[DELETE]}" onto void controllers.PersonController.deletePerson(java.lang.Long)
+2018-09-19 16:25:51.404  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons/{id}],methods=[GET]}" onto models.person.dto.PersonDTO controllers.PersonController.one(java.lang.Long)
+2018-09-19 16:25:51.404  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/persons],methods=[GET]}" onto java.util.List<models.person.dto.PersonDTO> controllers.PersonController.all()
+2018-09-19 16:25:51.407  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[POST]}" onto models.roles.dto.RolesDTO controllers.RolesController.newRoles(models.roles.dto.RolesDTO)
+2018-09-19 16:25:51.408  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[DELETE]}" onto void controllers.RolesController.deleteRoles(java.lang.Long)
+2018-09-19 16:25:51.408  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{id}],methods=[GET]}" onto models.roles.dto.RolesDTO controllers.RolesController.one(java.lang.Long)
+2018-09-19 16:25:51.409  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET]}" onto java.util.List<models.roles.dto.RolesDTO> controllers.RolesController.all()
+2018-09-19 16:25:51.416  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto java.util.List<models.user.dto.UserDTO> controllers.UserController.findAll()
+2018-09-19 16:25:51.417  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST],consumes=[application/json;charset=UTF-8]}" onto models.user.dto.UserDTO controllers.UserController.registerUser(models.user.dto.UserDTO)
+2018-09-19 16:25:51.427  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-19 16:25:51.428  INFO 22789 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-19 16:25:51.490  INFO 22789 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:25:51.491  INFO 22789 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-19 16:25:51.531  INFO 22789 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in entityNotFoundAdvice
+2018-09-19 16:25:52.086  INFO 22789 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-19 16:25:52.095  INFO 22789 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-19 16:25:52.111  INFO 22789 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-19 16:25:52.174  INFO 22789 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-19 16:25:52.178  INFO 22789 --- [main] controllers.Application                  : Started Application in 9.903 seconds (JVM running for 15.114)
+2018-09-19 16:26:35.941  INFO 22789 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-19 16:26:35.941  INFO 22789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-19 16:26:35.964  INFO 22789 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2018-09-19 16:26:36.334  INFO 22789 --- [http-nio-8080-exec-2] controllers.PersonController             : [GET] /persons
+2018-09-19 16:26:45.612  INFO 22789 --- [Thread-5] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5b89eef1: startup date [Wed Sep 19 16:25:43 PHT 2018]; root of context hierarchy
+2018-09-19 16:26:45.620  INFO 22789 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-19 16:26:45.622  INFO 22789 --- [Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-19 16:26:45.640  INFO 22789 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-19 16:26:45.647  INFO 22789 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2018-09-19 16:26:45.671  INFO 22789 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
